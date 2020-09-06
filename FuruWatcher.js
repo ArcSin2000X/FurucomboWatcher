@@ -1,7 +1,7 @@
 const Web3 = require('web3');
 
 // initialise nodeJS bot
-const infuraID = 'YOUR INFURA PROJECT ID';
+const infuraID = '2828f0a7f99648c093062c8678da4993';
 web3 = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io/v3/' + infuraID));
 const furucomboProxyContract = '0x57805e5a227937BAc2B0FdaCaA30413ddac6B8E1'.toLowerCase();
 
@@ -132,4 +132,4 @@ class FuruWatcher {
 let txWatcher = new FuruWatcher();
 setInterval(() => {
     txWatcher.monitorFuru();
-}, 15 * 1000);
+}, 10 * 1000);
