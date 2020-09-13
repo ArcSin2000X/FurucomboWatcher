@@ -1,5 +1,5 @@
-# Furucombo Watcher
-![](https://github.com/fifikobayashi/FurucomboWatcher/blob/master/bot.png) 
+# Furucombo Watcher (WIP)
+![](https://github.com/fifikobayashi/FurucomboWatcher/blob/master/bot.png)
 
 ***Background***
 
@@ -15,7 +15,7 @@ This NodeJS bot is intended to:
 
 1. Continuously monitor the Furucombo proxy contract v0.4.1 for successful transactions via the proxy contract.
 2. For each successfull transaction, assess whether it was a profitable arbitrage or simply a net neutral yield farming, liquidation or collateral swap operation.
-3. For each confirmed arbitrage transaction, extract the transaction hash and use it to reverse engineer the set of DeFi legos used for the arbitrage. 
+3. For each confirmed arbitrage transaction, extract the transaction hash and use it to reverse engineer the set of DeFi legos used for the arbitrage.
 4. For each reverse engineered arbitrage set, call the 1inch DEX aggregator to search through a wide range of DEXs and check if the best price still present a profitable arbitrage trade. If it is still profitable, then either notify bot owner via a Telegram bot, or simply execute the trade by calling the 1inch aggregator's swap function and grant its smart contract access to the funds. If the play is no longer profitable, store this 'known success' arbitrage play into an array.
 5. Periodically parse through the array of 'known successes' arbitrage plays via the 1inch DEX aggregator to see if any of them have become profitable, taking into consideration gas, liquidity, slippage and the bot owner's risk/reward ratio preferences.
 
@@ -46,7 +46,3 @@ Furucombo Proxy contract v0.4.1: 0x57805e5a227937BAc2B0FdaCaA30413ddac6B8E1
 ~~~
 node FuruWatcher.js
 ~~~
-
-![Screenshot of output](https://github.com/fifikobayashi/FurucomboWatcher/blob/master/node%20output.png)
-
-
